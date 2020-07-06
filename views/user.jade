@@ -1,0 +1,21 @@
+extends layout
+
+block content 
+
+  h2 Welcome, #{username}
+  br
+  
+  form(action="/logout", method="POST")
+    input(hidden="true", type="text", name="username", value="#{username}")
+    button(type="submit") Logout
+  br
+  hr
+  
+  a(href="/call/connect") Connect with video
+  br
+  hr
+  
+  h3 List of active users
+  ul
+    each user in users
+      li= user

@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 Home
+  
+  h2 Login
+  form(action="/login", method="POST")
+    input(name="username", type="text", placeholder="Choose a username")
+    button(type="submit") Submit
+  
+  if (hasMessage)
+    p= message
